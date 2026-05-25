@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre mí - Juan Caballero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #180d0d;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+        nav {
+            background-color: #2a1212;
+            padding: 12px;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #ff0000;
+        }
+        nav a { color: #ff9999; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: #ff0000; }
+        .perfil {
+            background-color: #2a1212;
+            border-radius: 20px;
+            padding: 30px 25px;
+            border-left: 6px solid #ff0000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .foto {
+            width: 180px;
+            border-radius: 50%;
+            border: 4px solid #ff0000;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+        .texto {
+            max-width: 700px;
+        }
+        .texto p { 
+            margin-bottom: 15px; 
+            line-height: 1.6;
+            text-align: justify;
+        }
+        h2 { 
+            color: #ff0000; 
+            border-bottom: 2px solid #ff0000; 
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+        }
+        footer { text-align: center; margin-top: 40px; border-top: 1px solid #ff0000; padding-top: 20px; }
+        .btn-volver { 
+            display: inline-block; 
+            background-color: #ff0000; 
+            color: #000; 
+            padding: 8px 20px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .btn-volver:hover {
+            background-color: #cc0000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Juan Caballero</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="sobre_mi.html">Sobre mí</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="perfil">
+        <img class="foto" src="JuanCaballero.jpg" alt="Juan Caballero" onerror="this.src='https://via.placeholder.com/180?text=Juan'">
+        <div class="texto">
+            <h2>Sobre mí</h2>
+            <p>Soy Juan Caballero, estudiante de Análisis de Sistemas en la Universidad Tecnológica Intercontinental (UTIC). Apasionado por la tecnología, el desarrollo web y el diseño de interfaces. Actualmente curso el primer semestre y me encuentro explorando el mundo del frontend y backend.</p>
+            <p>Me gusta aprender de forma autodidacta, resolver problemas y crear proyectos que combinen funcionalidad con una buena experiencia de usuario. Este portafolio reúne mis primeros trabajos prácticos, desde un currículum vitae hasta una investigación sobre el mercado laboral en el desarrollo web.</p>
+            <p>En mi tiempo libre disfruto programar, dibujar y jugar videojuegos.</p>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+    <footer>
+        <p>Juan Caballero - Todos los datos son ficticios con fines educativos</p>
+    </footer>
+</div>
+</body>
+</html>

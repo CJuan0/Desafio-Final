@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería - Juan Caballero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #180d0d;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+        nav {
+            background-color: #2a1212;
+            padding: 12px;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #ff0000;
+        }
+        nav a { color: #ff9999; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: #ff0000; }
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .tarjeta {
+            background-color: #2a1212;
+            border-radius: 15px;
+            padding: 12px;
+            width: 260px;
+            text-align: center;
+            border: 1px solid #ff0000;
+            transition: transform 0.2s;
+        }
+        .tarjeta:hover { transform: scale(1.02); }
+        .tarjeta img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #ff0000;
+        }
+        .tarjeta p { margin-top: 10px; color: #ff9999; font-weight: bold; }
+        footer { text-align: center; margin-top: 50px; border-top: 1px solid #ff0000; padding-top: 20px; }
+        .btn-volver { background-color: #ff0000; color: #000; padding: 8px 20px; border-radius: 25px; text-decoration: none; display: inline-block; margin-top: 20px; }
+        .btn-volver:hover { background-color: #cc0000; color: #fff; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Galería de proyectos</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="sobre_mi.html">Sobre mí</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="galeria">
+
+        <div class="tarjeta">
+            <img src="curriculum.PNG" alt="Proyecto 1">
+            <p>Currículum Vitae</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="Portal.PNG" alt="Proyecto 2">
+            <p>Noticias Tecnológicas</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="asunsabor.PNG" alt="Proyecto 3">
+            <p>Menú Restaurante</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="mk.PNG" alt="Proyecto 4">
+            <p>Mortal Kombat 9</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="universidad.PNG" alt="Proyecto 5">
+            <p>Universidad + Formulario</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="investigacion.PNG" alt="Proyecto 6">
+            <p>Investigación Web</p>
+        </div>
+
+    <div style="text-align: center;">
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+    <footer>
+        <p>Galería de proyectos - Puedes reemplazar cada imagen y texto por tus capturas reales</p>
+    </footer>
+</div>
+</body>
+</html>

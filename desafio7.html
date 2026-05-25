@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Investigación - Desarrollo Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #180d0d;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #ff0000;
+            text-align: center;
+            text-shadow: 0 0 5px #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #ff9999;
+            font-size: 1.1rem;
+            border-top: 1px solid #ff0000;
+            display: inline-block;
+            padding-top: 8px;
+        }
+
+        h2 {
+            color: #ff0000;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .seccion {
+            background-color: #2a1212;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ff0000;
+        }
+
+        .seccion p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .tabla-comparativa {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2a1212;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .tabla-comparativa th, .tabla-comparativa td {
+            border: 1px solid #ff0000;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .tabla-comparativa th {
+            background-color: #ff0000;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tabla-comparativa td {
+            background-color: #1f0e0e;
+        }
+
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tecnologia {
+            background-color: #2a1212;
+            border-radius: 30px;
+            padding: 5px 12px;
+            border: 1px solid #ff0000;
+            font-size: 0.85rem;
+        }
+
+        .fuentes-lista {
+            list-style: none;
+            margin-left: 0;
+        }
+        .fuentes-lista li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .fuentes-lista li::before {
+            content: "🔗";
+            position: absolute;
+            left: 0;
+            color: #ff9999;
+        }
+        .fuentes-lista a {
+            color: #ff9999;
+            text-decoration: none;
+        }
+        .fuentes-lista a:hover {
+            text-decoration: underline;
+            color: #ff0000;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 28px;
+            border-radius: 25px;
+            background-color: #ff0000;
+            color: #000000;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-volver:hover {
+            background-color: #cc0000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid #ff0000;
+            padding-top: 20px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 8px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>El mundo del desarrollo web</h1>
+        <div class="subtitulo">Investigación sobre roles, tecnologías y salarios (actualizado 2026)</div>
+    </div>
+
+    <!-- 1. Frontend -->
+    <h2>¿Qué es un desarrollador Frontend?</h2>
+    <div class="seccion">
+        <p>El <strong>Frontend</strong> se encarga de la interfaz de usuario, la interacción y todo lo que el visitante ve y toca. Trabaja directamente con diseño, experiencia de usuario (UX) y performance en el navegador.</p>
+        <p><strong>Tecnologías clave:</strong> HTML, CSS, JavaScript, React, Vue, Angular, además de herramientas como Webpack, Vite, Sass, Tailwind.</p>
+    </div>
+
+    <!-- 2. Backend -->
+    <h2>¿Qué es un desarrollador Backend?</h2>
+    <div class="seccion">
+        <p>El <strong>Backend</strong> gestiona la lógica del servidor, bases de datos, autenticación, APIs y seguridad. Su código no es visible, pero es el motor de la aplicación.</p>
+        <p><strong>Tecnologías comunes:</strong> Python (Django/Flask), Node.js, Java Spring, PHP Laravel, Ruby on Rails, C# .NET, SQL y NoSQL, Docker, AWS.</p>
+    </div>
+
+    <!-- 3. Full Stack -->
+    <h2>¿Qué es Full Stack?</h2>
+    <div class="seccion">
+        <p>Un <strong>Full Stack</strong> domina tanto frontend como backend. Puede construir una aplicación completa de principio a fin. No es experto en todo, pero tiene una visión global y capacidad de integrar ambas capas.</p>
+        <p><strong>Stacks populares:</strong> MERN (MongoDB, Express, React, Node.js), MEVN, LAMP, o Python + React.</p>
+    </div>
+
+    <!-- Tabla comparativa (sin cambios) -->
+    <h2>Tabla comparativa: Frontend vs Backend vs Full Stack</h2>
+    <div class="seccion">
+        <table class="tabla-comparativa">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Frontend</th>
+                    <th>Backend</th>
+                    <th>Full Stack</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Responsabilidad principal</strong></td>
+                    <td>Interfaz visual, experiencia de usuario, interactividad.</td>
+                    <td>Lógica de negocio, servidores, bases de datos, APIs.</td>
+                    <td>Integrar y desarrollar ambos lados de la aplicación.</td>
+                </tr>
+                <tr>
+                    <td><strong>Lenguajes comunes</strong></td>
+                    <td>JavaScript, TypeScript, HTML, CSS.</td>
+                    <td>Python, Java, PHP, Ruby, C#, Go, Node.js.</td>
+                    <td>Combinación de ambos: JavaScript (Node.js + React) o Python + React.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tecnologías / Frameworks</strong></td>
+                    <td>React, Vue, Angular, Svelte, Tailwind, Bootstrap.</td>
+                    <td>Django, Spring, Laravel, Express, Flask, Rails.</td>
+                    <td>MERN, MEAN, LAMP, Django + React, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>Bases de datos</strong></td>
+                    <td>No maneja directamente (solo consume APIs).</td>
+                    <td>PostgreSQL, MySQL, MongoDB, Firebase, Redis.</td>
+                    <td>Ambas, según necesidad.</td>
+                </tr>
+                <tr>
+                    <td><strong>Curva de aprendizaje</strong></td>
+                    <td>Media (conceptual), mucha práctica en diseño.</td>
+                    <td>Media-alta (lógica, seguridad, arquitectura).</td>
+                    <td>Alta (abarca más áreas).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. Tecnologías actuales (Ligeramente actualizada) -->
+    <h2>Tecnologías que se usan actualmente (2026)</h2>
+    <div class="seccion">
+        <p>El ecosistema web está en constante evolución. Hoy, las herramientas más demandadas incluyen:</p>
+        <div class="tecnologias">
+            <span class="tecnologia">React 19</span>
+            <span class="tecnologia">Next.js 15</span>
+            <span class="tecnologia">Vue 3</span>
+            <span class="tecnologia">Angular 18</span>
+            <span class="tecnologia">Node.js 22</span>
+            <span class="tecnologia">Express 5</span>
+            <span class="tecnologia">Python + FastAPI/Django</span>
+            <span class="tecnologia">Java Spring Boot 3</span>
+            <span class="tecnologia">PHP Laravel 12</span>
+            <span class="tecnologia">Go</span>
+            <span class="tecnologia">Rust (WebAssembly)</span>
+            <span class="tecnologia">TypeScript</span>
+            <span class="tecnologia">Tailwind CSS</span>
+            <span class="tecnologia">GraphQL</span>
+            <span class="tecnologia">MongoDB / PostgreSQL / Supabase</span>
+            <span class="tecnologia">Docker / Kubernetes</span>
+            <span class="tecnologia">AWS / Vercel / Cloudflare</span>
+        </div>
+        <p style="margin-top: 15px;"><strong>Tendencias 2026:</strong> IA generativa (Copilot, Cursor), shadcn/ui, HTMX, Astro, Solid.js, y el auge del desarrollo con WebAssembly.</p>
+    </div>
+
+    <!-- 5. Salario en guaraníes (ACTUALIZADO con datos de Forbes) -->
+    <h2>¿Cuánto puede ganar un desarrollador web? (en guaraníes)</h2>
+    <div class="seccion">
+        <p>Los salarios varían según experiencia, ubicación y tecnologías. A continuación, se presentan rangos salariales mensuales basados en un estudio de remuneraciones de iRH, publicado por Forbes Paraguay en junio de 2025, y en datos del portal de empleo Glassdoor para Paraguay.[reference:0][reference:1]</p>
+        <ul>
+            <li><strong>Junior (0-2 años):</strong> A partir de 3.600.000 Gs. en adelante según el perfil, para roles como FrontEnd, BackEnd o Ingeniería de Software.[reference:2]</li>
+            <li><strong>Semi Senior (2-5 años):</strong> 7.500.000 - 12.000.000 Gs. (Paraguay).</li>
+            <li><strong>Senior (5+ años):</strong> Hasta 22.000.000 Gs. (Paraguay) para un Gerente de Desarrollo TI, llegando incluso a rangos de 20 a 40 millones para ciertos puestos de alta gerencia.[reference:3][reference:4]</li>
+            <li><strong>Full Stack o especialista en tecnologías demandadas:</strong> Suelen estar en el rango superior de cada nivel, especialmente aquellos con habilidades en desarrollo móvil o tecnologías cloud.</li>
+        </ul>
+        <p>Es importante destacar que el Estudio de Remuneraciones y Beneficios de iRH señala que los desarrolladores siguen siendo de los perfiles más buscados, con salarios que parten de G. 10.000.000. La creciente demanda de talento tecnológico en Paraguay y la competencia por perfiles especializados están impulsando estos valores al alza.[reference:5]</p>
+    </div>
+
+    <!-- Fuentes de información (ACTUALIZADO con fuentes locales y en español) -->
+    <h2>Fuentes de información</h2>
+    <div class="seccion">
+        <p>La información presentada fue recopilada de las siguientes fuentes confiables:</p>
+        <ul class="fuentes-lista">
+            <li><a href="https://developer.mozilla.org/es/" target="_blank">MDN Web Docs (Mozilla)</a> - Documentación oficial sobre tecnologías web.</li>
+            <li><a href="https://roadmap.sh/" target="_blank">Roadmap.sh</a> - Guías de aprendizaje para frontend, backend y full stack.</li>
+            <li><a href="https://www.forbes.com.py/macroeconomia/los-salarios-mundo-tic-paraguay-llegan-g-40-millones-mes-n73761" target="_blank">Forbes Paraguay (junio 2025)</a> - Estudio de Remuneraciones y Beneficios de iRH sobre salarios TIC en Paraguay.</li>
+            <li><a href="https://www.glassdoor.com.ar/Sueldos/paraguay-software-developer-sueldo-SRCH_IL.0,8_IN213_KO9,27.htm" target="_blank">Glassdoor</a> - Promedios salariales para desarrolladores en Paraguay.</li>
+            <li><a href="https://survey.stackoverflow.co/2025" target="_blank">Stack Overflow Developer Survey 2025</a> - Tecnologías más usadas y tendencias globales.</li>
+            <li><a href="https://www.getonbrd.com/" target="_blank">GetonBoard</a> - Portal de empleo tech con datos regionales.</li>
+            <li><a href="https://wageindicator.org/es-py/trabajo-en-paraguay/trabajo-y-salario/paraguay-desarrolladores-web-y-multimedia" target="_blank">WageIndicator</a> - Data salarial para desarrolladores web y multimedia en Paraguay (2026).</li>
+            <li><a href="https://www.pivot.com.py/" target="_blank">PIVOT</a> - La mayor bolsa de empleo del Paraguay, con información actualizada del mercado laboral local.</li>
+            <li><a href="https://www.bcp.gov.py/" target="_blank">Banco Central del Paraguay</a> - Tipo de cambio referencial (USD/PYG).</li>
+            <li><a href="https://www.freecodecamp.org/espanol/news/que-es-un-desarrollador-full-stack-back-end-front-end-ingeniero-full-stack/" target="_blank">FreeCodeCamp Español</a> - Recurso educativo en español para definiciones de roles.</li>
+        </ul>
+        <p>Todos los datos fueron contrastados para ofrecer una visión realista del mercado actual.</p>
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </p>
+
+    <footer>
+        <p>Investigación realizada por Juan Caballero | Basada en documentación oficial, tendencias 2026 y estudios del mercado paraguayo.</p>
+        <p>2026 - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

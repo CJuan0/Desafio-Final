@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Juan Caballero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #180d0d;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+        nav {
+            background-color: #2a1212;
+            padding: 12px;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #ff0000;
+        }
+        nav a { color: #ff9999; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: #ff0000; }
+        .contacto-card {
+            background-color: #2a1212;
+            border-radius: 20px;
+            padding: 25px;
+            border-left: 6px solid #ff0000;
+        }
+        .contacto-info p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+        .contacto-info a {
+            color: #ff9999;
+            text-decoration: none;
+        }
+        .contacto-info a:hover {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 10px;
+            border: 1px solid #ff0000;
+            background-color: #1f0e0e;
+            color: #fff;
+        }
+        .formulario button {
+            background-color: #ff0000;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .formulario button:hover {
+            background-color: #cc0000;
+            color: #fff;
+        }
+        footer { text-align: center; margin-top: 40px; border-top: 1px solid #ff0000; padding-top: 20px; }
+        .btn-volver { background-color: #ff0000; color: #000; padding: 8px 20px; border-radius: 25px; text-decoration: none; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Contacto</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="sobre_mi.html">Sobre mí</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="contacto-card">
+        <h2>Información de contacto</h2>
+        <div class="contacto-info">
+            <p>Dirección: Asunción, Paraguay</p>
+            <p>Teléfono: +595 992 657734</p>
+            <p>Email: <a href="juanaxel177@gmail.com">juancaballero@email.com</a></p>
+            <p>GitHub: <a href="https://github.com/CJuan0">github.com/juancaballero</a></p>
+        </div>
+        <h2 style="margin-top: 30px;">Escríbeme</h2>
+        <form class="formulario" onsubmit="alert('Mensaje enviado (simulación)'); return false;">
+            <input type="text" placeholder="Nombre y apellido" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea rows="4" placeholder="Tu mensaje..."></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </div>
+    <div style="text-align: center;">
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+    <footer>
+        <p>Actualmente en mantenimiento</p>
+    </footer>
+</div>
+</body>
+</html>

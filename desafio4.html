@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mortal Kombat 9 - Legado de lucha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #180d0d;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-mk9 {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .logo-principal {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .logo-principal img {
+            max-width: 350px;
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+
+        h1 {
+            color: #ff0000;
+            text-align: center;
+            text-shadow: 0 0 5px #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #ff9999;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #ff0000;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+
+        h3 {
+            color: #ff9999;
+            margin-top: 20px;
+        }
+
+        .personaje-destacado {
+            background-color: #2a1212;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            transition: transform 0.2s ease;
+            border: 1px solid #ff000030;
+        }
+
+        .personaje-destacado:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
+            border-color: #ff0000;
+        }
+
+        .img-personaje {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff0000;
+        }
+
+        .info-personaje {
+            flex: 1;
+        }
+
+        .tabla-personajes {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2a1212;
+            border-radius: 15px;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .tabla-personajes th, .tabla-personajes td {
+            border: 1px solid #ff0000;
+            padding: 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .tabla-personajes th {
+            background-color: #ff0000;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .tabla-personajes tr:nth-child(even) {
+            background-color: #1f0e0e;
+        }
+
+        .icono-personaje-tabla {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border: 1px solid #ff0000;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .alineacion-bien {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .alineacion-mal {
+            color: #f44336;
+            font-weight: bold;
+        }
+
+        .alineacion-neutral {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .opinion {
+            background-color: #2a1212;
+            padding: 20px;
+            border-radius: 20px;
+            border-left: 6px solid #ff0000;
+            margin: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .opinion-texto {
+            flex: 2;
+        }
+
+        .opinion-gif {
+            flex: 0 0 auto;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .opinion-gif img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 28px;
+            border-radius: 25px;
+            background-color: #ff0000;
+            color: #000000;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-volver:hover {
+            background-color: #cc0000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid #ff0000;
+            padding-top: 20px;
+        }
+
+        .galeria {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .galeria img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #ff0000;
+            transition: transform 0.2s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .aviso-derechos {
+            background-color: #2a1212;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px dashed #ff6666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img class="logo-mk9" src="mklogo.png" alt="Logo Mortal Kombat 9">
+        <h1>Mortal Kombat 9</h1>
+        <p class="subtitulo">El mejor título de la saga según muchos | 2011 - 2025: legado eterno</p>
+    </div>
+
+    <div class="logo-principal">
+        <img src="pantalladeinicio.PNG" alt="Logo principal de Mortal Kombat 9">
+    </div>
+
+    <h2>Historia: Debe Ganar...</h2>
+    <p>La historia comienza cuando <strong>Raiden</strong>, el dios del trueno y protector de la Tierra (Earthrealm), recibe una visión aterradora del futuro: <strong>Shao Kahn</strong>, emperador de Outworld, conquista la Tierra y destruye todo. Para evitar ese destino, Raiden decide cambiar el curso de los eventos enviando mensajes a su yo del pasado durante el torneo de Mortal Kombat.</p>
+    <p>Durante siglos, Outworld ha estado conquistando reinos. Según las reglas de los Antiguos, un reino solo puede ser invadido si gana 10 torneos de Mortal Kombat consecutivos. La Tierra (Earthrealm) ha ganado los últimos 9 torneos (gracias especialmente a Liu Kang). El décimo torneo es decisivo. Shao Kahn, cansado de esperar, quiere a la tierra en su poder, impaciente saber si Shang Tsung traerá las buenas noticias.</p>
+    <p>Mientras tanto, <strong>Scorpion</strong> busca venganza contra Sub-Zero (Bi-han) por la muerte de su clan y familia. <strong>Sub-Zero (Kuai Liang)</strong> también entra en la historia buscando justicia. <strong>Johnny Cage, Sonya Blade y Jax</strong> representan a las fuerzas especiales de la Tierra. Raiden y Liu Kang son los grandes héroes de la Tierra.</p>
+    <p><strong>Sin spoilers mayores:</strong> La historia tiene un giro muy importante hacia el final que reinicia la línea temporal de la saga y prepara todo lo que vendrá después (Mortal Kombat X y 11).</p>
+
+    <h2>Personajes principales (con mayor peso en la historia principalmente)</h2>
+    
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="Raiden.PNG">
+        <div class="info-personaje">
+            <h3>Raiden</h3>
+            <p><strong>He must win...</strong></p>
+            <p>Protagonista central. Es el que impulsa toda la historia con sus visiones del futuro.</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="LiuKang.PNG">
+        <div class="info-personaje">
+            <h3>Liu Kang</h3>
+            <p><strong>For Kung Lao, the Shaolin, and Earthrealm!</strong></p>
+            <p>El campeón de Earthrealm, tiene varios momentos clave y es el héroe tradicional.</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="Scorpion.PNG">
+        <div class="info-personaje">
+            <h3>Scorpion</h3>
+            <p><strong>No... To hell with YOU!</strong></p>
+            <p>Tiene uno de los arcos más fuertes y emocionales del juego (Aunque luego pierde importancia totalmente).</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="subzero.PNG">
+        <div class="info-personaje">
+            <h3>Sub-Zero (Kuai Liang)</h3>
+            <p><strong>We share blood, but we are not brothers</strong></p>
+            <p>Arco muy importante, especialmente en la segunda mitad pues se vuelve de gran ayuda.</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="ShaoKang.PNG">
+        <div class="info-personaje">
+            <h3>Shao Kahn</h3>
+            <p><strong>I am Shao Kahn, Conqueror of Worlds!</strong></p>
+            <p>El villano principal, el motor de la invasión.</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="Quanchi.PNG">
+        <div class="info-personaje">
+            <h3>Quan Chi</h3>
+            <p><strong>The Elder Gods are toothless. Your world is near destruction, yet they do not act</strong></p>
+            <p>Manipulador clave, aparece constantemente moviendo hilos.</p>
+        </div>
+    </div>
+    <div class="personaje-destacado">
+        <img class="img-personaje" src="samsung.PNG">
+        <div class="info-personaje">
+            <h3>Shang Tsung</h3>
+            <p><strong>Your soul is mine!</strong></p>
+            <p>Anfitrión del torneo y muy relevante en la primera mitad.</p>
+        </div>
+    </div>
+
+    <h2>Imágenes del juego</h2>
+    <div class="galeria">
+        <img src="mk9select.PNG">
+        <img src="Milenavsnightwolf.jpg">
+        <img src="mklogopelea.png">
+    </div>
+
+    <h2>Todos los personajes jugables de MK9</h2>
+    <div class="aviso-derechos">
+        Nota: Kratos (exclusivo PS3) y Freddy Krueger (invitado DLC) son personajes con licencias externas. La expiración de los derechos de Freddy Krueger es una de las razones por las que MK9 fue retirado de tiendas digitales, mientras que Goro, Kintaro y Shao Kang son considerados jefes en este juego por lo que no son jugables.
+    </div>
+    <table class="tabla-personajes">
+        <thead>
+            <tr>
+                <th>Icono</th>
+                <th>Personaje</th>
+                <th>Alineación</th>
+                <th>Descripción breve</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/raiden-mortal-kombat-9-character-portrait-icon-altar-of-gaming-353-35x35.png" alt="Icono"></td><td>Raiden</td><td class="alineacion-bien">Earthrealm</td><td>Dios del trueno, protector de la Tierra.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/liu-kang-mortal-kombat-9-character-portrait-icon-altar-of-gaming-348-35x35.png" alt="Icono"></td><td>Liu Kang</td><td class="alineacion-bien">Earthrealm</td><td>Campeón de la Tierra, héroe tradicional.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kung-lao-mortal-kombat-9-character-portrait-icon-altar-of-gaming-346-35x35.png" alt="Icono"></td><td>Kung Lao</td><td class="alineacion-bien">Earthrealm</td><td>Guerrero shaolin, amigo de Liu Kang.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/johnny-cage-mortal-kombat-9-character-portrait-icon-altar-of-gaming-341-35x35.png" alt="Icono"></td><td>Johnny Cage</td><td class="alineacion-bien">Earthrealm</td><td>Estrella de cine que lucha por demostrar su valía.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/sonya-blade-mortal-kombat-9-character-portrait-icon-altar-of-gaming-363-35x35.png" alt="Icono"></td><td>Sonya Blade</td><td class="alineacion-bien">Earthrealm</td><td>Teniente de las Fuerzas Especiales.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/jax-briggs-mortal-kombat-9-character-portrait-icon-altar-of-gaming-340-35x35.png" alt="Icono"></td><td>Jax Briggs</td><td class="alineacion-bien">Earthrealm</td><td>Oficial de las Fuerzas Especiales.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kurtis-stryker-mortal-kombat-9-character-portrait-icon-altar-of-gaming-347-35x35.png" alt="Icono"></td><td>Stryker</td><td class="alineacion-bien">Earthrealm</td><td>Policía de la ciudad, defensor civil.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/nightwolf-mortal-kombat-9-character-portrait-icon-altar-of-gaming-350-35x35.png" alt="Icono"></td><td>Nightwolf</td><td class="alineacion-bien">Earthrealm</td><td>Chamán nativo americano.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/scorpion-mortal-kombat-9-character-portrait-icon-altar-of-gaming-356-35x35.png" alt="Icono"></td><td>Scorpion</td><td class="alineacion-neutral">Neutral (vengativo)</td><td>Espectro del infierno, busca venganza.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/sub-zero-mortal-kombat-9-character-portrait-icon-altar-of-gaming-364-35x35.png" alt="Icono"></td><td>Sub-Zero (Kuai Liang)</td><td class="alineacion-bien">Earthrealm</td><td>Gran maestro del Lin Kuei, poder de hielo.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/smoke-mortal-kombat-9-character-portrait-icon-altar-of-gaming-362-35x35.png" alt="Icono"></td><td>Smoke (Humano)</td><td class="alineacion-bien">Earthrealm</td><td>Amigo de Sub-Zero, escapó de la cibernética.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/cyber-sub-zero-mortal-kombat-9-character-portrait-icon-altar-of-gaming-459-35x35.png" alt="Icono"></td><td>Cyber Sub-Zero</td><td class="alineacion-neutral">Lin Kuei</td><td>Versión cibernética de Sub-Zero.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/cyrax-mortal-kombat-9-character-portrait-icon-altar-of-gaming-337-35x35.png" alt="Icono"></td><td>Cyrax</td><td class="alineacion-neutral">Lin Kuei</td><td>Ninja cibernético en busca de redención.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/sektor-mortal-kombat-9-character-portrait-icon-altar-of-gaming-357-35x35.png" alt="Icono"></td><td>Sektor</td><td class="alineacion-mal">Lin Kuei</td><td>Ninja cibernético leal al clan, sin piedad.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/noob-saibot-mortal-kombat-9-character-portrait-icon-altar-of-gaming-351-35x35.png" alt="Icono"></td><td>Noob Saibot</td><td class="alineacion-mal">Netherrealm</td><td>Espectro oscuro, hermano mayor de Sub-Zero.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kitana-mortal-kombat-9-character-portrait-icon-altar-of-gaming-345-35x35.png" alt="Icono"></td><td>Kitana</td><td class="alineacion-bien">Earthrealm (Edenia)</td><td>Princesa guerrera, hija adoptiva de Shao Kahn.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/mileena-mortal-kombat-9-character-portrait-icon-altar-of-gaming-349-35x35.png" alt="Icono"></td><td>Mileena</td><td class="alineacion-mal">Outworld</td><td>Clon deforme de Kitana, leal a Shao Kahn.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/jade-mortal-kombat-9-character-portrait-icon-altar-of-gaming-339-35x35.png" alt="Icono"></td><td>Jade</td><td class="alineacion-bien">Earthrealm</td><td>Amiga y guardaespaldas de Kitana.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/sindel-mortal-kombat-9-character-portrait-icon-altar-of-gaming-360-35x35.png" alt="Icono"></td><td>Sindel</td><td class="alineacion-neutral">Edenia</td><td>Reina de Edenia, madre de Kitana.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/ermac-mortal-kombat-9-character-portrait-icon-altar-of-gaming-338-35x35.png" alt="Icono"></td><td>Ermac</td><td class="alineacion-neutral">Criatura de Shang Tsung</td><td>Ser formado por almas, leal a Shao Kahn.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/reptile-mortal-kombat-9-character-portrait-icon-altar-of-gaming-355-35x35.png" alt="Icono"></td><td>Reptile</td><td class="alineacion-mal">Outworld</td><td>Último de su raza, sirviente de Shao Kahn.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/baraka-mortal-kombat-9-character-portrait-icon-altar-of-gaming-336-35x35.png" alt="Icono"></td><td>Baraka</td><td class="alineacion-mal">Outworld</td><td>Líder de los tarkatanos, salvaje y leal.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/sheeva-mortal-kombat-9-character-portrait-icon-altar-of-gaming-359-35x35.png" alt="Icono"></td><td>Sheeva</td><td class="alineacion-mal">Outworld</td><td>Guerrera shokan, guardaespaldas de Sindel.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kabal-mortal-kombat-9-character-portrait-icon-altar-of-gaming-342-35x35.png" alt="Icono"></td><td>Kabal</td><td class="alineacion-neutral">Mercenario</td><td>Antiguo Black Dragon, busca redención.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kano-mortal-kombat-9-character-portrait-icon-altar-of-gaming-343-35x35.png" alt="Icono"></td><td>Kano</td><td class="alineacion-mal">Black Dragon</td><td>Líder del clan Black Dragon, mercenario.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/shang-tsung-mortal-kombat-9-character-portrait-icon-altar-of-gaming-358-35x35.png" alt="Icono"></td><td>Shang Tsung</td><td class="alineacion-mal">Outworld</td><td>Hechicero organizador del torneo.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/quan-chi-mortal-kombat-9-character-portrait-icon-altar-of-gaming-352-35x35.png" alt="Icono"></td><td>Quan Chi</td><td class="alineacion-mal">Netherrealm</td><td>Hechicero manipulador, aliado de Shao Kahn.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kenshi-mortal-kombat-9-character-portrait-icon-altar-of-gaming-344-35x35.png" alt="Icono"></td><td>Kenshi (DLC)</td><td class="alineacion-bien">Earthrealm</td><td>Guerrero ciego con telequinesis.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/skarlet-mortal-kombat-9-character-portrait-icon-altar-of-gaming-361-35x35.png" alt="Icono"></td><td>Skarlet (DLC)</td><td class="alineacion-mal">Outworld</td><td>Asesina creada por Shang Tsung.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/rain-mortal-kombat-9-character-portrait-icon-altar-of-gaming-354-35x35.png" alt="Icono"></td><td>Rain (DLC)</td><td class="alineacion-mal">Outworld</td><td>Príncipe edeniano, maestro del agua.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/kratos-mortal-kombat-9-character-portrait-icon-altar-of-gaming-366-35x35.png" alt="Icono"></td><td>Kratos (Exclusivo PS3)</td><td class="alineacion-neutral">Invitado (God of War)</td><td>Fantasma de Esparta. Solo en PlayStation 3.</td></tr>
+            <tr><td class="icono"><img class="icono-personaje-tabla" src="https://assets.altarofgaming.com/wp-content/uploads/2022/06/freddy-krueger-mortal-kombat-9-character-portrait-icon-altar-of-gaming-365-35x35.png" alt="Icono"></td><td>Freddy Krueger (Invitado DLC)</td><td class="alineacion-mal">Pesadilla</td><td>Asesino de sueños. Su licencia expiró, por eso MK9 ya no se vende.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Opinión personal</h2>
+    <div class="opinion">
+        <div class="opinion-texto">
+            <p>Mortal Kombat 9, Komplete edition, 2011, o por como te guste referirte a él es sin duda, uno de los mejores juegos de lucha que he probado desde que tengo memoria, algunos titulos incluso rozando lo malo como el MK:Armageddon, y mira que el titulo antes mencionado lo he jugado bastante en mi niñez, pero de todas formas soy totalmente sincero y no es nostalgía ciega el decir esto del MK9, es en definitiva mi favorito y le guardo un enorme cariño ya que en una antigua Ps3 que tenía logré sacarme casi todos los logros a excepción de uno, que mas que por dificultad simplemente era por lo tedioso de conseguirlo, pero bueno, prosiguiendo, la jugabilidad es fluida, los fatalities son espectaculares tanto para la época como para hoy en dia, y el modo historia es una carta de amor a los fans de la saga aunque personalmente es imposible no notar los problemas, conveniencias y agujeros de guión en ella, y por mas ridículo que suene es la mejor historia de MK hasta la fecha. Reiniciar la línea temporal permitió revivir los momentos clásicos con gráficos actualizados y una narrativa más profunda para por lo menos mis estandares (que no son muy altos). La dificultad está bien balanceada y el elenco de personajes es variado aunque siempre habrá alguno mas roto que otro (como Cyrax o Kabal). Personalmente, lo considero un juego que todo amante de la saga y cualquiera que le gusten los titulos de peleas debería jugar al menos una vez. Su legado perdura hasta hoy, y la comunidad sigue recordando con cariño el "MK9". ¡Altamente recomendado!</p>
+        </div>
+        <div class="opinion-gif">
+            <img src="mt.gif">
+        </div>
+    </div>
+
+    <footer>
+        <p>Mortal Kombat 9 - Desarrollado por NetherRealm Studios</p>
+        <p>Todas las imágenes pertenecen a sus respectivos dueños. Kratos es © Sony Interactive Entertainment. Freddy Krueger es © New Line Cinema / Warner Bros.</p>
+    </footer>
+
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </p>
+
+</body>
+</html>
